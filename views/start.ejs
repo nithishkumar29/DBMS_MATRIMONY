@@ -85,7 +85,7 @@
    	   </p>
    </div>
    <div id="Register">
-   	   <form id="Form"  action="signupdbh.php" method="POST">
+   	   <form id="Form"  action="/signup" method="POST">
    	   	<div id="rForm1" ng-app="signA" ng-controller="ctrlA" name="formA">
    	   	   <input type="text" name="fname" placeholder="First Name" ng-model="fname" required>
    	   	   <span style="color:red" ng-show="formA.fname.$dirty && formA.fname.$invalid"><span ng-show="formA.fname.$error.required">First Name is required</span></span><br>
@@ -93,15 +93,11 @@
    	   	   <span style="color:red" ng-show="formA.lname.$dirty && formA.lname.$invalid"><span ng-show="formA.lname.$error.required">Last Name is required</span></span><br>
    	   	   <input type="text" name="pname" placeholder="Profile Name" ng-model="pname" required>
    	   	   <span style="color:red" ng-show="formA.pname.$dirty && formA.pname.$invalid"><span ng-show="formA.pname.$error.required">Profile Name is required</span></span><br>
-   	   	   <input type="text" list="genderlist" name="gender" placeholder="Gender" ng-model="gender" required>
-   	   	   <span style="color:red" ng-show="formA.gender.$dirty && formA.gender.$invalid"><span ng-show="formA.gender.$error.required">Gender is required</span></span><br>
-   	   	   <datalist id="genderlist">
-   	   	   	   <option value="Male">
-   	   	   	   <option value="Female">
-   	   	   </datalist>
+           <input type="radio" name="gender" value="male"> Male
+           <input type="radio" name="gender" value="female"> Female<br>
    	   	   <input type="email" name="email" placeholder="Email" ng-model="email" required><span style="color:red" ng-show="formA.email.$dirty && formA.email.$invalid"><span ng-show="formA.email.$error.required">Email is required</span></span><br>
    	       <input type="password" name="password" placeholder="Password" ng-model="password" required><span style="color:red" ng-show="formA.password.$dirty && formA.password.$invalid"><span ng-show="formA.password.$error.required">Password is required</span></span><br>
-   	       <input type="password" name="rPassword" placeholder="Re-Enter Password" ng-model="rPassword" required><span style="color:red" ng-show="formA.rPassword.$dirty && formA.rPassword.$invalid"><span ng-show="formA.rPassword.$error.required">reEnterPassword is required</span></span><br>
+   	       <input type="password" name="repassword" placeholder="Re-Enter Password" ng-model="rPassword" required><span style="color:red" ng-show="formA.rPassword.$dirty && formA.rPassword.$invalid"><span ng-show="formA.rPassword.$error.required">reEnterPassword is required</span></span><br>
            <button type="button" id="submitA">proceed</button>
    	   </div>
    	   <div id="rForm2" ng-app="signB" ng-controller="ctrlB" name="formB">
@@ -131,7 +127,7 @@
                 <option value="Foreign language">
                 <option value="Other">
    	   	   </datalist>
-   	   	   <input type="number" name="height" placeholder="height( in cm )" ng-model="height" required><span style="color:red" ng-show="formB.height.$dirty && formB.height.$invalid"><span ng-show="formB.height.$error.required">Height is required</span></span><br>
+   	   	   <input type="number" name="userHeight" placeholder="height( in cm )" ng-model="height" required><span style="color:red" ng-show="formB.height.$dirty && formB.height.$invalid"><span ng-show="formB.height.$error.required">Height is required</span></span><br>
    	   	   <input type="text" list="status" name="mStatus" placeholder="Marital Status" ng-model="mStatus" required><span style="color:red" ng-show="formB.mStatus.$dirty && formB.mStatus.$invalid"><span ng-show="formB.mStatus.$error.required">Field is required</span></span><br>
    	   	   <datalist id="status">
    	   	   	    <option value="Never Married">
@@ -139,7 +135,7 @@
    	   	   	    <option value="Divorced">
    	   	   	    <option value="Widow">
    	   	   </datalist>
-           <input type="radio" name="privacy" value="1">public
+           <input type="radio" name="privacy" value="1">privacy
            <input type="radio" name="privacy" value="0">public
            <button type="button" id="submitB" >oneStep</button>
    	   </div>
@@ -155,7 +151,7 @@
    </div>
    <div class="slideShow">
    	   <div class="slides"> 
-   	   	 <img style="opacity:1" src="images/leslie-rose-kit-harington.jpg">
+   	   	 <img style="opacity:1" src="/images/leslie-rose-kit-harington.jpg">
    	   </div>
    	   <div class="slides">
    	   	 <img  style="opacity:1" src="images/viruska.jpg">
@@ -170,9 +166,13 @@
        <a class="controls" id="rightCtrl" onclick="nextSlide(-1)"><h2>&#10095;&#10095;</h2></a>
    </div>
    <div id="Login">
-   	  <form id="loginForm" action="/sklsl" method="POST">
-   	  	<input type="text" name="userEmail"><br>
-   	  	<input type="password" name="userPassword"><br>
+   	  <form id="loginForm" action="/login" method="POST">
+   	  	Email: <input type="email" name="userEmail"><br>
+   	  	Password: <input type="password" name="userPassword"><br>
+        <div>
+          <span style="color:red;"><i><%= passwordIncorrect %></i></span>
+          <span style="color:green;"><i><%= userNotRegistered %></i></span>
+        </div>
    	  	<input type="submit" name="login" value="login">
    	  </form>
    </div>
