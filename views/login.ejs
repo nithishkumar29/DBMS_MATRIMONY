@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>start</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style type="text/css">
+       #header{
+       position:fixed;
+       top:0%;
+       width:100vw;
+       height:10%;
+       background-color:#323438;
+       }
+       .icons{
+          color:white;
+          float:right;
+          width:8%;
+          background-color:yellow;
+          border:4px solid black;
+       }
+       #Register{
+        position:relative;  
+        opacity:0.8;
+        margin-top:7%;
+        margin-left:35%;
+        width:30%;
+        height:60vmin;  
+       }
+
+       #Login{
+        position:relative;
+        margin-top:-27%;
+        margin-left:35%;
+        width:30%;
+        height:60vmin;  
+       }
+        #Form ,#loginForm{
+         background-color:black;
+       }
+       .slideShow{
+           position:relative;
+           width:100vw;
+           height:525px;
+           margin-top:-485px;
+           z-index: -1;
+       }
+       .controls{
+          position:absolute;
+          top:50%;
+          left:0%;
+          z-index:2;
+       }
+       #rightCtrl{
+           left:98%;
+       }
+       .slides >img{
+           position: absolute;
+           width:100%;
+           height:100%;
+
+       }
+    </style>
+</head>
+<body>
+   <div id="header">
+       <button class="icons" id="RegisterIcon" onclick="location.href='/register'">
+            register
+       </button>
+       <button class="icons" id="LoginIcon" onclick="location.href='/login'">
+           Login
+       </button>
+       <button class="icons" id="FeedbackIcon">
+           Feedback
+       </button>
+       <button class="icons" id="AboutIcon">
+           About
+       </button>
+   </div>
+   <div id="Register">
+       <form id="Form"  action="/register" method="POST">
+        <div id="rForm1" ng-app="signA" ng-controller="ctrlA" name="formA">
+           <input type="text" name="fname" placeholder="First Name" ng-model="fname" required>
+           <span style="color:red" ng-show="formA.fname.$dirty && formA.fname.$invalid"><span ng-show="formA.fname.$error.required">First Name is required</span></span><br>
+           <input type="text" name="lname" placeholder="Last Name" ng-model="lname" required>
+           <span style="color:red" ng-show="formA.lname.$dirty && formA.lname.$invalid"><span ng-show="formA.lname.$error.required">Last Name is required</span></span><br>
+           <input type="text" name="pname" placeholder="Profile Name" ng-model="pname" required>
+           <span style="color:red" ng-show="formA.pname.$dirty && formA.pname.$invalid"><span ng-show="formA.pname.$error.required">Profile Name is required</span></span><br>
+           <input type="radio" name="gender" value="male"> Male
+           <input type="radio" name="gender" value="female"> Female<br>
+           <input type="email" name="email" placeholder="Email" ng-model="email" required><span style="color:red" ng-show="formA.email.$dirty && formA.email.$invalid"><span ng-show="formA.email.$error.required">Email is required</span></span><br>
+           <input type="password" name="password" placeholder="Password" ng-model="password" required><span style="color:red" ng-show="formA.password.$dirty && formA.password.$invalid"><span ng-show="formA.password.$error.required">Password is required</span></span><br>
+           <input type="password" name="repassword" placeholder="Re-Enter Password" ng-model="rPassword" required><span style="color:red" ng-show="formA.rPassword.$dirty && formA.rPassword.$invalid"><span ng-show="formA.rPassword.$error.required">reEnterPassword is required</span></span><br>
+           <button type="button" id="submitA">proceed</button>
+       </div>
+       <div id="rForm2" ng-app="signB" ng-controller="ctrlB" name="formB">
+           <textarea rows="4" cols="50" name="description" >describe yourself</textarea>
+           <input type="date" name="DOB" ng-model="date" required><span style="color:red" ng-show="formB.DOB.$dirty && formB.DOB.$invalid"><span ng-show="formB.DOB.$error.required">D-O-B is required</span></span><br>
+           <input type="text" list="religions" name="religion" placeholder="religion" ng-model="religion">
+           <datalist id="religions">
+                <option value="Hindu">
+                <option value="Muslim">
+                <option value="Christian">
+                <option value="Sikh">
+                <option value="No Religion">
+                <option value="Spiritual">
+                <option value="Other">
+           </datalist>
+           <input type="text" list="motherTongueList" name="motherTongue" placeholder="Mother Tongue" ng-model="motherTongue">
+           <datalist id="motherTongueLsit">
+                <option value="Hindi">
+                <option value="Telugu">
+                <option value="English">
+                <option value="Assameese">
+                <option value="Bihari">
+                <option value="urdu">
+                <option value="Tamil">
+                <option value="Malayali">
+                <option value="Gujarathi">
+                <option value="Foreign language">
+                <option value="Other">
+           </datalist>
+           <input type="number" name="userHeight" placeholder="height( in cm )" ng-model="height" required><span style="color:red" ng-show="formB.height.$dirty && formB.height.$invalid"><span ng-show="formB.height.$error.required">Height is required</span></span><br>
+           <input type="text" list="status" name="mStatus" placeholder="Marital Status" ng-model="mStatus" required><span style="color:red" ng-show="formB.mStatus.$dirty && formB.mStatus.$invalid"><span ng-show="formB.mStatus.$error.required">Field is required</span></span><br>
+           <datalist id="status">
+                <option value="Never Married">
+                <option value="Married Early">
+                <option value="Divorced">
+                <option value="Widow">
+           </datalist>
+           <input type="radio" name="privacy" value="1">privacy
+           <input type="radio" name="privacy" value="0">public
+           <button type="button" id="submitB" >oneStep</button>
+       </div>
+       <div id="rForm3">
+            <input type="text" name="qualification" placeholder="qualification">
+            <input type="text" name="college" placeholder="college/university">
+            <input type="text" name="occupation" placeholder="Occupation">
+            <input type="text" name="country" placeholder="country">
+            <input type="number" name="salary" placeholder="salary(INR)">
+            <input type="submit" name="submitC" value="Register">
+       </div>
+       </form>
+   </div>
+   <div class="slideShow">
+       <div class="slides"> 
+         <img style="opacity:1" src="/images/leslie-rose-kit-harington.jpg">
+       </div>
+       <div class="slides">
+         <img  style="opacity:1" src="images/viruska.jpg">
+       </div>
+       <div class="slides">
+         <img  style="opacity:1" src="images/harry-meghan.jpg">
+       </div>
+       <div class="slides">
+         <img  style="opacity:1" src="images/chaisam.jpg">
+       </div>
+       <a class="controls" onclick="nextSlide(+1)"><h2>&#10094;&#10094;</h2></a>
+       <a class="controls" id="rightCtrl" onclick="nextSlide(-1)"><h2>&#10095;&#10095;</h2></a>
+   </div>
+   <div id="Login">
+    <span style="color:red;"><i><%= loginAgain %></i></span>
+      <form id="loginForm" action="/login" method="POST">
+        Email: <input type="email" name="userEmail"><br>
+        Password: <input type="password" name="userPassword"><br>
+        <div>
+          <span style="color:red;"><i><%= passwordIncorrect %></i></span>
+          <span style="color:green;"><i><%= userNotRegistered %></i></span>
+        </div>
+        <input type="submit" name="login" value="login">
+      </form>
+   </div>
+   <script type="text/javascript">
+      var appA=angular.module('signA',[]);
+      appA.controller('ctrlA',function($scope){
+
+      });
+      var appB=angular.module('signB',[]);
+      appB.controller('ctrlB',function($scope){
+
+      });
+      angular.bootstrap(document.getElementById("rForm2"),['signB']);
+     
+    
+   </script>
+</body>
+<script type="text/javascript">
+    var slideIndex=1;
+    var factor=1;
+    switchSlides(slideIndex);
+            
+            setInterval(function addSlide()
+            {
+              console.log("called");
+              slideIndex+=factor;
+              console.log(slideIndex);
+              switchSlides(slideIndex);
+               
+            },5000);
+            function switchSlides(n)
+            {
+              console.log("wat");
+               var slides=document.getElementsByClassName("slides");
+               if(n>slides.length)
+                  slideIndex=1;
+                if(n<1)
+                  slideIndex=slides.length;
+                for(var i=0;i<slides.length;i++)
+                  slides[i].style.display="none";
+                slides[slideIndex-1].style.display="block";
+            }
+            function nextSlide(x)
+            {
+              slideIndex+=x;
+              switchSlides(slideIndex);
+            }
+         $(document).ready(function(){
+                $("#rForm2").hide();
+                $("#rForm3").hide();
+                $("#Form").hide();
+         });
+          
+   
+
+</script>
+</html>
