@@ -22,7 +22,7 @@
        .icons{
        	  color:white;
        	  float:right;
-       	  width:5%;
+       	  width:8%;
        	  background-color:yellow;
           border:4px solid black;
        }
@@ -71,21 +71,21 @@
 </head>
 <body>
    <div id="header">
-   	   <p class="icons" id="RegisterIcon">
+   	   <button class="icons" id="RegisterIcon" onclick="location.href='/register'">
    	   	    register
-   	   </p>
-   	   <p class="icons" id="LoginIcon">
+   	   </button>
+   	   <button class="icons" id="LoginIcon" onclick="location.href='/login'">
    	   	   Login
-   	   </p>
-   	   <p class="icons" id="FeedbackIcon">
+   	   </button>
+   	   <button class="icons" id="FeedbackIcon">
    	   	   Feedback
-   	   </p>
-   	   <p class="icons" id="AboutIcon">
+   	   </button>
+   	   <button class="icons" id="AboutIcon">
    	   	   About
-   	   </p>
+   	   </button>
    </div>
    <div id="Register">
-   	   <form id="Form"  action="/signup" method="POST">
+   	   <form id="Form"  action="/register" method="POST">
    	   	<div id="rForm1" ng-app="signA" ng-controller="ctrlA" name="formA">
    	   	   <input type="text" name="fname" placeholder="First Name" ng-model="fname" required>
    	   	   <span style="color:red" ng-show="formA.fname.$dirty && formA.fname.$invalid"><span ng-show="formA.fname.$error.required">First Name is required</span></span><br>
@@ -223,23 +223,7 @@
 	       $(document).ready(function(){
                 $("#rForm2").hide();
                 $("#rForm3").hide();
-                $("#submitA").click(function(){
-                	    $("#rForm1").hide();
-                        $("#rForm2").show();
-                });
-                $("#submitB").click(function(){
-                	    $("#rForm2").hide();
-                        $("#rForm3").show();
-                });
                 $("#Form,#Login").hide();
-                $("#RegisterIcon").click(function(){
-                    $("#Form").toggle();
-                    $("#Login").hide();
-                });
-                $("#LoginIcon").click(function(){
-                     $("#Login").toggle();
-                     $("#Form").hide();
-                });
 	       });
           
 	 
