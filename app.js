@@ -17,6 +17,8 @@ app.use(session({
   secret: 'random_string_goes_here',
   duration: 30 * 60 * 1000,
   activeDuration: 5 * 60 * 1000,
+  resave: true,
+  saveUninitialized: true
 }));
 
 app.use(express.static(require('path').join(__dirname + '/Public')));
@@ -36,9 +38,22 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false})
 
 app.get('/',function(req,res) {
 	res.render( 'start', {
-		username: 'hi',
 		passwordIncorrect: ' ',
 		userNotRegistered: ' '
+	});
+})
+
+app.get('/login',function(req,res) {
+	res.render( 'login', {
+		passwordIncorrect: ' ',
+		userNotRegistered: ' ',
+		loginAgain:' '
+	});
+})
+
+app.get('/register',function(req,res) {
+	res.render( 'register', {
+		pnameTaken:' '
 	});
 })
 
@@ -50,7 +65,11 @@ app.get('/dashboard',function(req,res) {
 	}
 	else{
 		console.log('Login again!!');
-		res.redirect('/');
+		res.render('login',{
+			passwordIncorrect: ' ',
+			userNotRegistered: ' ',
+			loginAgain:'Session expired, Login Again!! '
+		});
 	}
 })
 
@@ -61,7 +80,7 @@ app.post('/login',urlencodedParser,function(req,res){
 	connection.query('SELECT * FROM users WHERE email = ?',[email],function(error, results, fields){
 		if(error){
 			console.log("error");
-			res.redirect('/');
+			res.redirect('/login');
 		}
 		else{
 			if(results.length > 0){
@@ -94,24 +113,26 @@ app.post('/login',urlencodedParser,function(req,res){
 				}
 				else{
 					console.log("Password Incorrect");
-					res.render( 'start', {
+					res.render( 'login', {
 						passwordIncorrect: 'password Incorrect',
-						userNotRegistered: ' '
+						userNotRegistered: ' ',
+						loginAgain: ' '
 					});
 				}
 			}
 			else{
 				console.log("Email Doesn't exist");
-				res.render( 'start', {
-					userNotRegistered: 'User Not Registered',
-					passwordIncorrect: ' '
+				res.render( 'login', {
+					userNotRegistered: 'User Not Registered!! Click the Register button',
+					passwordIncorrect: ' ',
+					loginAgain: ' '
 				});
 			}
 		}
 	});
 })
 
-app.post('/signup',urlencodedParser,function(req,res){
+app.post('/register',urlencodedParser,function(req,res){
 	var fname = req.body.fname;
 	var lname = req.body.lname;
 	var pname = req.body.pname; 
@@ -143,7 +164,9 @@ app.post('/signup',urlencodedParser,function(req,res){
 			if(results.length > 0)
 			{
 				console.log("USER EXISTS");
-				res.redirect('/');
+				res.render('register', {
+					pnameTaken: 'Profile name taken.. choose other Profile Name!!'
+				});
 			}
 			else{
 				connection.query("INSERT INTO users values ('"+fname+"','"+lname+"','"+pname+"','"+gender+"','"+email+"','"+password+"','"+description+"','"+DOB+"','"+religion+"','"+motherTongue+"','"+userHeight+"','"+mStatus+"','"+privacy+"','"+qualification+"','"+college+"','"+occupation+"','"+country+"','"+salary+"')",function(error, results, fields)
@@ -160,7 +183,7 @@ app.post('/signup',urlencodedParser,function(req,res){
 						console.log("Register Successful");
 						console.log(pname+" "+email+" "+password);
 						//res.sendFile(__dirname+"/login.html");
-						res.redirect('/');
+						res.redirect('/login');
 						res.end();
 					}
 				});
