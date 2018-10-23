@@ -98,12 +98,13 @@
            <input type="radio" name="gender" value="male"> Male
            <input type="radio" name="gender" value="female"> Female<br>
    	   	   <input type="email" name="email" placeholder="Email" ng-model="email" required><span style="color:red" ng-show="formA.email.$dirty && formA.email.$invalid"><span ng-show="formA.email.$error.required">Email is required</span></span><br>
+           <div><span style="color:red;"><i><%= emailTaken %></i></span></div>
    	       <input type="password" id="password" name="password" placeholder="Password" ng-model="password" required><span style="color:red" ng-show="formA.password.$dirty && formA.password.$invalid"><span ng-show="formA.password.$error.required">Password is required</span></span><br>
    	       <input type="password" id="repassword" name="repassword" placeholder="Re-Enter Password" ng-model="rPassword" required><span style="color:red" ng-show="formA.rPassword.$dirty && formA.rPassword.$invalid"><span ng-show="formA.rPassword.$error.required">reEnterPassword is required</span></span><br>
            <button type="button" id="submitA">proceed</button>
    	   </div>
    	   <div id="rForm2" ng-app="signB" ng-controller="ctrlB" name="formB">
-   	   	   <textarea rows="4" cols="50" name="description" >describe yourself</textarea>
+   	   	   <textarea rows="4" cols="50" name="description" placeholder="describe yourself" ></textarea>
    	   	   <input type="date" name="DOB" ng-model="date" required><span style="color:red" ng-show="formB.DOB.$dirty && formB.DOB.$invalid"><span ng-show="formB.DOB.$error.required">D-O-B is required</span></span><br>
    	   	   <input type="text" list="religions" name="religion" placeholder="religion" ng-model="religion">
    	   	   <datalist id="religions">

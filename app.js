@@ -53,7 +53,8 @@ app.get('/login',function(req,res) {
 
 app.get('/register',function(req,res) {
 	res.render( 'register', {
-		pnameTaken:' '
+		pnameTaken:' ',
+		emailTaken:' '
 	});
 })
 
@@ -132,7 +133,8 @@ app.post('/login',urlencodedParser,function(req,res){
 	});
 })
 
-app.post('/register',urlencodedParser,function(req,res){
+app.post('/register',urlencodedParser,function(req,res)
+{
 	var fname = req.body.fname;
 	var lname = req.body.lname;
 	var pname = req.body.pname; 
@@ -160,19 +162,22 @@ app.post('/register',urlencodedParser,function(req,res){
 				"failed":"Error ocurred"
 			});
 		}
-		else{
+		else
+		{
 			if(results.length > 0)
 			{
 				console.log("USER EXISTS");
 				res.render('register', {
-					pnameTaken: 'Profile name taken.. choose other Profile Name!!'
+					pnameTaken: 'Profile name taken.. choose other Profile Name!!',
+					emailTaken: ' '
 				});
 			}
-			else{
-				connection.query("INSERT INTO users values ('"+fname+"','"+lname+"','"+pname+"','"+gender+"','"+email+"','"+password+"','"+description+"','"+DOB+"','"+religion+"','"+motherTongue+"','"+userHeight+"','"+mStatus+"','"+privacy+"','"+qualification+"','"+college+"','"+occupation+"','"+country+"','"+salary+"')",function(error, results, fields)
+			else
+			{
+				connection.query('SELECT * FROM users WHERE email = ?',[email], function(error, results, fields)
 				{
 					if(error){
-						console.log("error at inserting values");
+						console.log("error at query");
 						res.send({
 							"code":400,
 							"failed":"Error ocurred"
@@ -180,13 +185,38 @@ app.post('/register',urlencodedParser,function(req,res){
 					}
 					else
 					{
-						console.log("Register Successful");
-						console.log(pname+" "+email+" "+password);
-						//res.sendFile(__dirname+"/login.html");
-						res.redirect('/login');
-						res.end();
-					}
-				});
+						if(results.length > 0)
+						{
+							console.log("USER EXISTS");
+							res.render('register', {
+								pnameTaken: ' ',
+								emailTaken: 'Email already registered'
+							});
+						}
+						else
+						{
+							connection.query("INSERT INTO users values ('"+fname+"','"+lname+"','"+pname+"','"+gender+"','"+email+"','"+password+"','"+description+"','"+DOB+"','"+religion+"','"+motherTongue+"','"+userHeight+"','"+mStatus+"','"+privacy+"','"+qualification+"','"+college+"','"+occupation+"','"+country+"','"+salary+"')",function(error, results, fields)
+							{
+								if(error)
+								{
+									console.log("error at inserting values");
+									res.send({
+										"code":400,
+										"failed":"Error ocurred"
+									});
+								}
+								else
+								{
+									console.log("Register Successful");
+									console.log(pname+" "+email+" "+password);
+									//res.sendFile(__dirname+"/login.html");
+									res.redirect('/login');
+									res.end();
+								}
+							});
+						}
+					}		
+				});				
 			}
 		}
 	});
