@@ -77,11 +77,18 @@ app.get('/dashboard',function(req,res) {
 app.post('/login',urlencodedParser,function(req,res){
 	var	email = req.body.userEmail;
 	var	password = req.body.userPassword;
-	
 	connection.query('SELECT * FROM users WHERE email = ?',[email],function(error, results, fields){
 		if(error){
 			console.log("error");
 			res.redirect('/login');
+		}
+		if(email.length == 0 || password.length == 0)
+		{
+		res.render( 'login', {
+			passwordIncorrect: 'Insufficient Credentials',
+			userNotRegistered: ' ',
+			loginAgain: ' '
+			});	
 		}
 		else{
 			if(results.length > 0){
