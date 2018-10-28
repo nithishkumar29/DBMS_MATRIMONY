@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Krub:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style type="text/css">
     	#header{
@@ -16,7 +17,7 @@
 		   	   top:0%;
 		   	   width:100vw;
 		   	   height:10%;
-		   	   background:linear-gradient(to right, #3b3c3d,#6d6e70);
+		   	   background:linear-gradient(to left,#263838,#545656);
 		   	   border:1px solid white;
 		       }
     	#searchIcon,#logoutIcon{
@@ -44,12 +45,14 @@
     	#logoutIcon{
     		left:90%;
     		top:25%;
+            padding:0px 4px;
     		text-decoration:none;
     		border: none;
     		font-size:25px;
     		font-family:monospace;
-    		background-color: #6d6e70;
+    		background:linear-gradient(to left,#263838,#545656);
     		justify-content:center;
+            border-radius:20%/50%;
     	}
     	#searchIcon{
     		position:absolute;
@@ -57,7 +60,7 @@
     		top:25%;
     		width:3%;
     		height:51%;
-    		background-color:#6d6e70;
+    		background:linear-gradient(to left,#263838,#545656);
     		border-radius:50%;
     		cursor:pointer;
     	}
@@ -73,18 +76,19 @@
     		border: none;
     		font-size:22px;
     		background-color:#6d6e70; 
-    		right:13%;
+    		right:12.5%;
     		top:25%;
     		width:52%;
     		height:51%;
     		color:#ff6600;
     		padding-left:2%;
-    		border-radius:2%/50%;
+    		border-radius:2%/49%;
     		text-decoration: none;
     	}
     	#profile{
     		position: relative;
-    		background:url("/images/bck.jpg");
+    		background:linear-gradient(to left,#263838,#545656);/*url("/images/bck1.jpg");*/
+            border:1px solid white;
     		margin-top:4.9%;
     		height:90vmin;
     		width:60vmin;
@@ -96,7 +100,8 @@
     		margin-top:-40%;
     		width:120vmin;
     		height:15vmin;
-            background-color:#3cb371;
+            background:linear-gradient(to top ,#263838,#545656);
+            opacity:0.8;
     	}
     	#pform{
     		position: absolute;
@@ -111,7 +116,7 @@
     	#title{
     		position:absolute;
     		font-size:16px;
-    		color: white;
+    		color:#050505;
     		font-weight:800;
     		top:16%;
     		width:100%;
@@ -136,7 +141,7 @@
     	#bckImage>img{
     		position:relative;
     		margin-left:60vmin;
-    		margin-top:-11.6%;
+    		margin-top:-12%;
     		z-index: -1;
     		width:70.53vmax;
     		height:89vmin;
@@ -152,7 +157,7 @@
     	}
     	.slide1{
     		position: absolute;
-    		background-color:#b3ffe6;
+    		background:linear-gradient(to right bottom,#263838,#a3c2c2);
     		border-radius:6px;
     		left:8%;
     		top:0%;
@@ -166,7 +171,7 @@
     		top:0%;
     		width:25%;
     		height:100%;
-    		background-color:#b3ffe6;
+    		background:linear-gradient(to right bottom,#263838,#a3c2c2);
     		border-radius:6px;
     	}
     	.slide3{
@@ -175,7 +180,7 @@
     		top:0%;
     		width:25%;
     		height:100%;
-    		background-color:#b3ffe6;
+    		background:linear-gradient(to right bottom,#263838,#a3c2c2);
     		border-radius:6px;
     	}
     	.slide1 >img ,.slide2 > img, .slide3 > img{
@@ -246,15 +251,17 @@
     		position:absolute;
     		left:60%;
     		top:35%;
-    		z-index:5;
+    		z-index:1;
     		cursor:pointer;
     	}
+
+
     	#dpDisplay > form > input[type="file"]
     	{
     		display:none;
     	}
     	.Custom-style{
-    		background-color: #3cb371;
+    		background:linear-gradient(to right bottom,#263838,#a3c2c2);;
     		color:white;
     		font-size:20px;
     	}
@@ -287,27 +294,99 @@
         	top:45%;
         	color:cyan;
         	font-size:30px;
+            letter-spacing:4px;
+            font-family: 'Krub', sans-serif;
+            text-shadow:2px 2px 8px black;
         }
         #msg{
+
         	position: absolute;
         	left:35%;
         	top:53%;
         	color:cyan;
         	font-size:20px;
-        	text-shadow:2px 2px 8px white;
+            letter-spacing:4px;
+        	text-shadow:2px 2px 8px black;
         }
         .logoutbtn{
         	font-size:15px;
         }
+        p{
+            font-family: 'Krub', sans-serif;
+        }
+        #dashboardIcons{
+            font-size: 36px;
+            position: absolute;
+            margin-top: 100%;
+            margin-left: 15%;
+            padding: 10px;
+            color: white;
+            float: left;
+        }
+        i{
+            font-size:36px;
+            padding: 10px;
+            transition: transform .3s;
+        }
+        i:hover{
+            cursor: pointer;
+            transform: scale(2);
+        }
+        .temp{
+            position:relative;
+            border-radius: 2px solid grey;
+        }
+        .temp button{
+            background-color: transparent;
+            border:none;
+        }
+        #yourLikesIcon{
+            position:absolute;
+            left:285%;
+            top:-210%;
+        }
+        #likedByIcon{
+            position:absolute;
+            margin-left:140%;
+            margin-top:-170%;
+        }
+        #shortlistIcon{
+            position: absolute;
+            margin-left:400%;
+            margin-top:-350%;
+        }
+        #yourLikesIcon:hover
+        {
+            color: red;
+            transform: scale(2);
+        }
+        #likedByIcon:hover
+        {
+            color: green;
+        }
+        #profileIcon:hover
+        {
+            transform: scale(2);
+            color: #3B5998;
+        }
+        #shortlistIcon:hover
+        {
+            color: black;
+        }
         *:focus{
         	outline: none;
+        }
+        
+        
+        body{
+            overflow-x:hidden;
         }
     </style>
 </head>
 <body>
 <div id="header">
-	 <form id="searchForm" action="" method="POST">
-	 	<input id="searchInput" type="text" name="partner">
+	 <form id="searchForm" action="/dashboard/userProfile" method="GET">
+	 	<input id="searchInput" type="text" name="partner" placeholder="Enter UserName ">
 	 </form>
 	 <label for="searchInput"><p id="searchIcon"><span class="glyphicon glyphicon-search custom-color"></span></p></label>
 	 <button id="logoutIcon" onclick="location.href='http://127.0.0.1:8081/logout'" type="button">Logout <span class="glyphicon glyphicon-log-out logoutbtn"></span></button>
@@ -326,18 +405,30 @@
     </div>
     <p id="userName">Hi , <span><%= user.pname %></span></p>
     <p id="msg">Welcome</p>
+    <div id="dashboardIcons">
+        <i class="material-icons" style="font-size:36px" title="Profile" id="profileIcon" onclick="location.href='http://localhost:8081/dashboard/userProfile?partner=<%= user.pname %>'">person</i>
+        <form class="temp" action="/dashboard/userProfile/likedBy" method="GET">
+            <button  type="submit" name="pname" value="<%= user.pname %>"><i class="material-icons" style="font-size:36px;" title="Interested in <%= user.pname %>" id="likedByIcon">face</i></button>
+        </form>
+        <form class="temp" action="/dashboard/userProfile/yourLikes" method="GET">
+            <button type="submit" name="pname" value="<%= user.pname %>"><i class="material-icons" style="font-size:36px;" title="Your Likes" id="yourLikesIcon" >favorite</i></button>
+        </form>
+        <form class="temp" action="/dashboard/userProfile/shortList" method="GET">
+            <button type="submit" name="pname" value="<%= user.pname %>"><i class="material-icons" style="font-size:36px;" title="ShortList" id="shortlistIcon">queue</i></button>
+        </form>
+    </div>
 </div>
 <div id="preferenceForm">
 	<p id="title"><span id="title1">I'm looking for a </span><span id="title2">aged</span><span id="title3">of religion</span><span id="title4">and mother tongue</span></p>
-	<form id="pform" action="/idontknow" method="POST">
+	<form id="pform" action="/dashboard/preference" method="GET">
          <input type="text" list="gender" name="gender" placeholder="Man/Woman" >
          <input type="number" name="fromAge" min="18" max="60"> to 
          <input type="number" name="toAge" min="18" max="60">
          <input type="text" list="religions" name="religion" placeholder="Select">
          <input type="text" list="motherTongueList" name="motherTongue" placeholder="Select">
          <datalist id="gender">
-                <option value="Man">
-                <option value="Woman">
+                <option value="male">
+                <option value="female">
          </datalist>
          <datalist id="religions">
    	   	   	    <option value="Hindu">
@@ -365,16 +456,16 @@
 	</form>
 </div>
 <div id="formbutton">
-	<label for="submitBtn" class="btn btn-success Custom-style">Explore</label>
+	<label for="submitBtn" class="btn btn-default Custom-style">Explore</label>
 </div>
 <div id="bckImage">
-	<img src="/images/wallpaper2.jpg">
+	<img src="/images/photo1.jpg">
 </div>
 <div class="slideShow">
 	
 		<% for(var i=0 ; i< members.length ;i+=3) { %>
 			<div class="slide1">
-			<% if (members[i].image) { %>
+			<% if (members[i%(members.length)].image) { %>
 		    <img class="imgFit imgFit1" src="/userImages/<%= members[(i)%(members.length)].pname %>.jpg">
 		    <% } else { %>
 		    <img class="imgFit imgFit1" src="/images/images_5.jpg" alt="Upload image">

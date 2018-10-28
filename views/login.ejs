@@ -19,7 +19,7 @@
        top:0%;
        width:100vw;
        height:10%;
-       background-color:#323438;
+       background:linear-gradient(to right,#538282,#576363);
 
        }
        #header img{
@@ -35,34 +35,26 @@
           color:white;
           float:right;
           width:8%;
-          background-color:green;
-          border:2px solid black;
+          background:linear-gradient(to right,#538282,#576363);
           padding: 2px;
           margin-top: 0.75em;
+          margin-left:0.5em;
+          border:1px solid grey;
        }
        .icons:hover {
         background-color: white;
-        color:green;
-
+        color:#ff6600;;
        }
        .headerDiv{
         text-align: center;
         font-size: 1.25vw;
         font-family: 'Krub', sans-serif;
        }
-       #Register{
-        position:relative;  
-        opacity:0.8;
-        margin-top:7%;
-        margin-left:35%;
-        width:30%;
-        height:60vmin;  
-       }
-
        #Login{
         position:relative;
+        z-index:2;
         border-bottom: 15%; 
-        margin-top:-27%;
+        margin-top:10%;
         margin-left:35%;
         width:30%;
         height:45vmin;  
@@ -71,6 +63,7 @@
         padding: 15px 15px;
         padding-bottom: 15px;
         padding-top: 15px;
+        opacity:0.8;
        }
         #Form {
          background-color:black;
@@ -79,22 +72,25 @@
            position:relative;
            width:100vw;
            height:600px;
-           margin-top:-485px;
+           margin-top:-500px;
            z-index: -1;
        }
        .controls{
           position:absolute;
           top:50%;
-          left:0%;
+          left:2%;
           z-index:2;
        }
        #rightCtrl{
-           left:98%;
+           left:96%;
        }
        .slides >img{
-           position: absolute;
+           position: absolute;/**/
+           z-index:-1;
+           left:0%;
            width:100%;
-           height:100%;
+           top:95.6%;
+           height:110%; /**/
 
        }
        input[type=email] ,input[type=password] {
@@ -136,14 +132,271 @@
           margin-right:20px;
         }
        
-           footer{ 
-        display: block;
+        #quote{
+          position:absolute;
+          left:0%;
+          top:95%;
+          width:100%;
+          height:40%;
+          background:linear-gradient(to right bottom,#ff8080,#33cccc);
+          color:black;
+        }
+        #quoteMsg1{
+          position: absolute;
+          left:30%;
+          right:20%;
+          top:20%;
+          font-size:30px;
+          font-weight:700;
+          font-family:monospace;
+        }
+        #quoteMsg2{
+          position: absolute;
+          left:20%;
+          right:10%;
+          top:40%;
+          font-size:30px;
+          font-weight:700;
+          font-family:monospace;
+        }
+        #quoteMsg3{
+          position: absolute;
+          left:22%;
+          top:65%;
+          font-size:35px;
+          color:black;
+          font-family:monospace;
+          text-shadow:2px 2px grey;
+          font-weight:800;
+        }
+        #stories{
+          position:absolute;
+          left:0%;
+          right:0%;
+          height:60%;
+          top:135%;
+          background-color:white;
+        }
+        #sTop
+        {
+          position: absolute;
+          top:5%;
+          left:35%;
+          font-size:30px;
+          color:red;
+          letter-spacing:4px;
+          font-family:sans-serif;
+          font-weight:600;
+        }
+        #story1,#story2,#story3{
+          position: absolute;
+          left:10%;
+          top:28%;
+          width:20%;
+          height:62%;
+          background-color:white;
+          border:1px solid grey ;
+          border-radius:1%;
+          box-shadow:5px 5px 5px 1px grey;
+        }
+        #story2{
+          left:40%;
+        }
+        #story3{
+          left:70%;
+        }
+        .storyImg{
+          position:absolute;
+          top:5%;
+          left:5%;
+          width:90%;
+          height:60%;
+        }
+        .coupleNames{
+          position: absolute;
+          top:68%;
+          left:30%;
+          font-size:16px;
+          font-weight:600;
+          color:#666699;
+        }
+        .coupleStory{
+          position: absolute;
+          top:77%;
+          left:1%;
+          right:1%;
+          font-size:12px;
+        }
+        #footer{ 
+        position:absolute;
         background:#323438;
+        top:195%;
         width:100%;
-        height: 5%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        height:40%;
+       }
+       #About{
+          color: white;
+       }
+       #divider{
+          position:absolute;
+          top:47.4%;
+          left:60%;
+          width:11%;
+          height:5%;
+          transform:skew(6deg,120deg);
+          background-color:#f44242;
+       }
+        #AboutUs{
+           position:absolute;
+           left:14%;
+           top:10%;
+           font-family:sans-serif;
+           font-size:22px;
+        }
+        #AboutMsg{
+          position: absolute;
+          left:2%;
+          width:30%;
+          top:32%;
+          font-size:13px;
+          letter-spacing:1px;
+          color:#f44242;
+        }
+        #AboutTeam{
+          position: absolute;
+          left:45%;
+          top:10%;
+          font-family:sans-serif;
+          font-size:22px;
+        }
+        .Team {
+          position: absolute;
+          left:35%;
+          top:30%;
+          width:100px;
+          height:100px;
+          border-radius:50%;
+          border:2px solid #323438;
+        }
+        #img2{
+          position: absolute;
+          left:45%;
+        }
+        #img3{
+          position: absolute;
+          left:55%;
+        }
+        #vam,#nit,#mad{
+          position: absolute;
+          left:37%;
+          top:43%;
+          color: white;
+        }
+        #nit{
+           left:47%;
+        }
+        #mad{
+          left:57%;
+        }
+        #copyrights{
+          position:absolute;
+          left:2%;
+          top:70%;
+          font-size:12px;
+          color:white;
+
+        }
+        #teamId{
+          position: absolute;
+          left:25%;
+          top:90%;
+          font-size:15px;
+          color:cyan;
+          letter-spacing:1px;
+        }
+        .heart-color{
+          color:red;
+        }
+        #Feedback{
+          position: absolute;
+          left:65%;
+          width:35%;
+          height:100%;
+
+       }
+       #FeedbackHead{
+          position: absolute;
+          left:45%;
+          top:10%;
+          color:white;
+          font-family:sans-serif;
+          font-size:22px;
+
+       }
+       #mailTxt{
+         position: absolute;
+         left:20%;
+         top:30%;
+         font-size:18px;
+         color:#ff6600;
+         letter-spacing:1px;
+       }
+       #gmailIcon{
+         position: absolute;
+         left:50%;
+         top:30%;
+         font-size:16px;
+         color:grey;
+       }
+       .gmail{
+         color :red;
+       }
+      
+        #sm{
+        position: absolute;
+        left:30%;
+        top:50%;
+        font-size:20px;
+        font-family:monospace;
+        letter-spacing:6px;
+        color: white;
+       }
+       #fIcon,#iIcon{
+          position: absolute;
+          left:40%;
+          top:70%;
+          width:10%;
+          height:10%;
+          
+       }
+       .fCol{
+          color: #66a3ff;
+          font-size: 20px;
+       }
+       #fIcon > button{
+          border:none;
+          background-color:#323438;
+       }
+       #iIcon{
+           color: white;
+           left:60%;
+       }
+       .iCol{
+          font-size:20px;
+          color: #ff5050;
+
+       }
+       #iIcon >button{
+          border:none;
+          background-color:#323438;
+       }
+          
+       *:focus{
+        outline:none;
+       }
+       body{
+        overflow-x: hidden;
+        scroll-behavior:smooth;
        }
       input[type=button]:hover, input[type=submit]:hover {
       background-color: white; /* Green */
@@ -154,11 +407,14 @@
         font-size: 1.25vw;
         font-family: 'Krub', sans-serif;
       }
+      *:focus{
+        outline:none;
+      }
     </style>
 </head>
 <body>
    <div id="header">
-    <img src="/images/logo.jpg" alt="logos" onclick="location.href='/' " title="home page" >
+    <!--<img src="/images/logo.jpg" alt="logos" onclick="location.href='/' " title="home page" >-->
         <div id="btns">
            <button class="icons" id="RegisterIcon" onclick="location.href='/register'">
                 <div class="headerDiv">Register</div>
@@ -173,71 +429,6 @@
                <div class="headerDiv">About</div>
            </button>
         </div>
-   </div>
-   <div id="Register">
-       <form id="Form"  action="/register" method="POST">
-        <div id="rForm1" ng-app="signA" ng-controller="ctrlA" name="formA">
-           <input type="text" name="fname" placeholder="First Name" ng-model="fname" required>
-           <span style="color:red" ng-show="formA.fname.$dirty && formA.fname.$invalid"><span ng-show="formA.fname.$error.required">First Name is required</span></span><br>
-           <input type="text" name="lname" placeholder="Last Name" ng-model="lname" required>
-           <span style="color:red" ng-show="formA.lname.$dirty && formA.lname.$invalid"><span ng-show="formA.lname.$error.required">Last Name is required</span></span><br>
-           <input type="text" name="pname" placeholder="Profile Name" ng-model="pname" required>
-           <span style="color:red" ng-show="formA.pname.$dirty && formA.pname.$invalid"><span ng-show="formA.pname.$error.required">Profile Name is required</span></span><br>
-           <input type="radio" name="gender" value="male"> Male
-           <input type="radio" name="gender" value="female"> Female<br>
-           <input type="email" name="email" placeholder="Email" ng-model="email" required><span style="color:red" ng-show="formA.email.$dirty && formA.email.$invalid"><span ng-show="formA.email.$error.required">Email is required</span></span><br>
-           <input type="password" name="password" placeholder="Password" ng-model="password" required><span style="color:red" ng-show="formA.password.$dirty && formA.password.$invalid"><span ng-show="formA.password.$error.required">Password is required</span></span><br>
-           <input type="password" name="repassword" placeholder="Re-Enter Password" ng-model="rPassword" required><span style="color:red" ng-show="formA.rPassword.$dirty && formA.rPassword.$invalid"><span ng-show="formA.rPassword.$error.required">reEnterPassword is required</span></span><br>
-           <button type="button" id="submitA">proceed</button>
-       </div>
-       <div id="rForm2" ng-app="signB" ng-controller="ctrlB" name="formB">
-           <textarea rows="4" cols="50" name="description" >describe yourself</textarea>
-           <input type="date" name="DOB" ng-model="date" required><span style="color:red" ng-show="formB.DOB.$dirty && formB.DOB.$invalid"><span ng-show="formB.DOB.$error.required">D-O-B is required</span></span><br>
-           <input type="text" list="religions" name="religion" placeholder="religion" ng-model="religion">
-           <datalist id="religions">
-                <option value="Hindu">
-                <option value="Muslim">
-                <option value="Christian">
-                <option value="Sikh">
-                <option value="No Religion">
-                <option value="Spiritual">
-                <option value="Other">
-           </datalist>
-           <input type="text" list="motherTongueList" name="motherTongue" placeholder="Mother Tongue" ng-model="motherTongue">
-           <datalist id="motherTongueLsit">
-                <option value="Hindi">
-                <option value="Telugu">
-                <option value="English">
-                <option value="Assameese">
-                <option value="Bihari">
-                <option value="urdu">
-                <option value="Tamil">
-                <option value="Malayali">
-                <option value="Gujarathi">
-                <option value="Foreign language">
-                <option value="Other">
-           </datalist>
-           <input type="number" name="userHeight" placeholder="height( in cm )" ng-model="height" required><span style="color:red" ng-show="formB.height.$dirty && formB.height.$invalid"><span ng-show="formB.height.$error.required">Height is required</span></span><br>
-           <input type="text" list="status" name="mStatus" placeholder="Marital Status" ng-model="mStatus" required><span style="color:red" ng-show="formB.mStatus.$dirty && formB.mStatus.$invalid"><span ng-show="formB.mStatus.$error.required">Field is required</span></span><br>
-           <datalist id="status">
-                <option value="Never Married">
-                <option value="Married Early">
-                <option value="Divorced">
-                <option value="Widow">
-           </datalist>
-           <input type="radio" name="privacy" value="1">privacy
-           <input type="radio" name="privacy" value="0">public
-           <button type="button" id="submitB" >oneStep</button>
-       </div>
-       <div id="rForm3">
-            <input type="text" name="qualification" placeholder="qualification">
-            <input type="text" name="college" placeholder="college/university">
-            <input type="text" name="occupation" placeholder="Occupation">
-            <input type="text" name="country" placeholder="country">
-            <input type="number" name="salary" placeholder="salary(INR)">
-            <input type="submit" name="submitC" value="Register">
-       </div>
-       </form>
    </div>
    <div class="slideShow">
        <div class="slides"> 
@@ -267,6 +458,57 @@
         <input type="submit" name="login" value="LOGIN">
       </form>
    </div>
+   <div id="quote">
+      <p id="quoteMsg1">We do not create marriage from scratch.</p>
+      <p id="quoteMsg2">Instead,in the elegant language of the marriage ceremony,</p>
+      <p id="quoteMsg3">' we enter into the holy estate of matrimony '</p>
+   </div>
+   <div id="stories">
+      <p id="sTop">Over 1 Million Happy Stories</p>
+      <div id="story1">
+         <img class="storyImg" src="/images/story1.jpg">
+         <p class="coupleNames">Sanju & Nithya</p>
+         <p class="coupleStory">"Our belief is that Relationships are made in heaven before birth, but xxxxxx came into life by Grace of God as the vital medium of true relationship."</p>
+      </div>
+      <div id="story2">
+         <img class="storyImg" src="/images/story3.jpg">
+         <p class="coupleNames">Iqbal & Aishah</p>
+         <p class="coupleStory">"Found My Mr. Perfect ...xxxxxxxx started my journey as arrange marriage but i am glad to say its Arrange cum Love marriage i am so very thankful to xxxxxxxxx"</p>
+      </div>
+      <div id="story3">
+         <img class="storyImg" src="/images/story2.jpg">
+         <p class="coupleNames">Ryan & Skyler</p>
+         <p class="coupleStory">"Thank you for connecting us. We clicked instantly and within a week we knew we wanted to be with each other forever. Thank you :)"</p>
+      </div>
+   </div>
+   <div id="footer">
+     <div id="divider"></div>
+      <div id="About">
+         <p id="AboutUs">About Us</p>
+         <p id="AboutMsg">xxxxxxx is initiated as a part of DBMS course project to offer the best free  responsive website with modern design built with latest technologies like  HTML5, CSS3, Bootstrap, JavaScript, ExpressJS, AngularJs, and jQuery.</p>
+         <p id="AboutTeam">Our Team</p>
+         <img class="Team" id="img1" src="images/vamsi.jpg">
+         <img class="Team" id="img2" src="images/nithish.jpg">
+         <img class="Team" id="img3" src="images/madhu.jpeg">
+         <p id="vam">Vamsi</p>
+         <p id="nit">Nithish</p>
+         <p id="mad">Madhu</p>
+         <p id="copyrights">&copy; Copyright 04.11.2018 , All Rights Reserved </p>
+         <p id="teamId">Made with <span class="glyphicon glyphicon-heart heart-color"></span> by 05.19.43 team</p>
+         
+      </div>
+      <div id="Feedback">
+         <p id="FeedbackHead">Feedback</p>
+         <p id="mailTxt">Shoot a MAIL at</p>
+         <p id="gmailIcon">
+            <span><i class="fa fa-google-plus gmail"></i></span><span>  rangavamsi5@gmail.com</span>
+         </p>
+        <p id="sm">connect  through</p>
+        <p></p>
+        <p id="fIcon" ><button onclick="'https://www.facebook.com/ranga.vamsi'" target="_blank"><i class="fa fa-facebook-f fCol" ></i></button></p>
+        <p id="iIcon"><button onclick="'https://www.instagram.com/the_caped_crusader_7/'" target="_blank"><i class="fa fa-instagram iCol"></i> </button></p>
+      </div>
+   </div>
    <script type="text/javascript">
       var appA=angular.module('signA',[]);
       appA.controller('ctrlA',function($scope){
@@ -280,7 +522,7 @@
      
     
    </script>
-   <footer>DBMS PROJECT TEAM MATRIMONY</footer>
+   <!--<footer>DBMS PROJECT TEAM MATRIMONY</footer>-->
 </body>
 <script type="text/javascript">
     var slideIndex=1;
@@ -313,9 +555,85 @@
               switchSlides(slideIndex);
             }
          $(document).ready(function(){
-                $("#rForm2").hide();
-                $("#rForm3").hide();
-                $("#Form").hide();
+            $("#FeedbackIcon").click(function(){
+            $('html,body').animate({
+                scrollTop:$("#Feedback").offset().top
+            },1500);
+            });
+             $("#AboutIcon").click(function(){
+            $('html,body').animate({
+                scrollTop:$("#About").offset().top
+            },1500);
+        });
+             $("#AboutUs").hover(function(){
+                 $("#AboutUs").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#AboutUs").css("border-bottom","none");
+             }
+             );
+             $("#AboutTeam").hover(function(){
+                 $("#AboutTeam").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#AboutTeam").css("border-bottom","none");
+             }
+             );
+             $("#FeedbackHead").hover(function(){
+                 $("#FeedbackHead").css("border-bottom","2px solid #ff6600");
+             },
+             function(){
+                $("#FeedbackHead").css("border-bottom","none");
+             }
+             );
+             $("#vam,#nit,#mad").css("display","none");
+             $("#img1,#vam").hover(function(){
+                 $("#img1").css("opacity","0.6");
+                 $("#vam").css("display","block");
+                 $("#img1").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img1").css("opacity","1");
+                $("#vam").css("display","none");
+                $("#img1").css("border","2px solid #323438");
+             }
+             );
+             $("#img2,#nit").hover(function(){
+                 $("#img2").css("opacity","0.6");
+                 $("#nit").css("display","block");
+                 $("#img2").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img2").css("opacity","1");
+                $("#nit").css("display","none");
+                $("#img2").css("border","2px solid #323438");
+             }
+             );
+             $("#img3,#mad").hover(function(){
+                 $("#img3").css("opacity","0.6");
+                 $("#mad").css("display","block");
+                 $("#img3").css("border","2px solid #ff6600");
+             },
+             function(){
+                $("#img3").css("opacity","1");
+                $("#mad").css("display","none");
+                $("#img3").css("border","2px solid #323438");
+             }
+             );
+             $("#fIcon").hover(function(){
+                 $(".fCol").css("font-size","30px");
+             },
+             function(){
+                $(".fCol").css("font-size","20px");
+             }
+             );
+              $("#iIcon").hover(function(){
+                 $(".iCol").css("font-size","30px");
+             },
+             function(){
+                $(".iCol").css("font-size","20px");
+             }
+             );
          });
           
    
