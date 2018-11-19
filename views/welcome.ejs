@@ -20,9 +20,19 @@
 		   	   background:linear-gradient(to left,#263838,#545656);
 		   	   border:1px solid white;
 		       }
+        #header img{
+            float: left;
+            width: 175px;
+            height: 78%;
+            background: #555;
+            cursor: pointer;
+            margin-left: 5%;
+            margin-top:0.5%;
+        /*border-radius: 15px;*/
+        } 
     	#searchIcon,#logoutIcon{
     		position:absolute;
-    		color:#ff6600;
+    		color:#66ff99;/*#ff6600;
     		/*background-color:white;*/
     		font-size:16px;
     		left:70%;
@@ -41,6 +51,7 @@
     		width:200px;
     		height:200px;
     		border-radius:50%;
+            border:2px solid white/*#66ff99*/;
     	}
     	#logoutIcon{
     		left:90%;
@@ -50,9 +61,9 @@
     		border: none;
     		font-size:25px;
     		font-family:monospace;
-    		background:linear-gradient(to left,#263838,#545656);
+    		background-color: #545656;/*:linear-gradient(to left,#263838,#545656);*/
     		justify-content:center;
-            border-radius:20%/50%;
+            border:;
     	}
     	#searchIcon{
     		position:absolute;
@@ -80,7 +91,7 @@
     		top:25%;
     		width:52%;
     		height:51%;
-    		color:#ff6600;
+    		color:#66ff99;
     		padding-left:2%;
     		border-radius:2%/49%;
     		text-decoration: none;
@@ -90,9 +101,10 @@
     		background:linear-gradient(to left,#263838,#545656);/*url("/images/bck1.jpg");*/
             border:1px solid white;
     		margin-top:4.9%;
-    		height:90vmin;
+    		height:89.8vmin;
     		width:60vmin;
     		z-index: 1;
+            border-bottom:1px solid white;
     	}
     	#preferenceForm{
     		position: relative;
@@ -141,11 +153,13 @@
     	#bckImage>img{
     		position:relative;
     		margin-left:60vmin;
-    		margin-top:-12%;
+    		margin-top:-11.4%;
     		z-index: -1;
     		width:70.53vmax;
-    		height:89vmin;
-            filter: blur(4px);
+    		height:89.6vmin;
+            border-right:1px solid white;
+            border-bottom:1px solid white;
+            
     	}
     	.slideShow{
     		position: relative;
@@ -379,12 +393,13 @@
         
         
         body{
-            overflow-x:hidden;
+            overflow:hidden;
         }
     </style>
 </head>
 <body>
 <div id="header">
+    <img src="/images/logo2.png" alt="logos" onclick="location.href='/dashboard' " title="home page" >
 	 <form id="searchForm" action="/dashboard/userProfile" method="GET">
 	 	<input id="searchInput" type="text" name="partner" placeholder="Enter UserName ">
 	 </form>
@@ -422,8 +437,8 @@
 	<p id="title"><span id="title1">I'm looking for a </span><span id="title2">aged</span><span id="title3">of religion</span><span id="title4">and mother tongue</span></p>
 	<form id="pform" action="/dashboard/preference" method="GET">
          <input type="text" list="gender" name="gender" placeholder="Man/Woman" >
-         <input type="number" name="fromAge" min="18" max="60"> to 
-         <input type="number" name="toAge" min="18" max="60">
+         <input type="number" name="fromAge" min="18" max="60" value="18"> <span style="color: white;">to</span> 
+         <input type="number" name="toAge" min="18" max="60" value="60">
          <input type="text" list="religions" name="religion" placeholder="Select">
          <input type="text" list="motherTongueList" name="motherTongue" placeholder="Select">
          <datalist id="gender">
@@ -600,11 +615,13 @@
            $("#dpDisplay").hover(function(){
                   $("#dp").css("opacity","0.7");
                   $("#dp").css("filter","blur(2px)");
+                  $("#dp").css("border","2px solid #66ff99");
                   $(".icon_for_file").show(200);
            },
              function(){
              	   $("#dp").css("opacity","1");
              	   $("#dp").css("filter","blur(0px)");
+                   $("#dp").css("border","2px solid white");
                   $(".icon_for_file").hide(200);
 
              }

@@ -31,6 +31,7 @@ var connection = mysql.createConnection ({
   post /register
   post /dashboard/Userprofile
   get /dashboard/userNameError
+  post /dashboard/delete
   get /logout
 
 */
@@ -41,7 +42,9 @@ app.use(session({
   cookieName: 'session',
   secret: 'random_string_goes_here',
   duration:  10 * 1000,
-  activeDuration: 10 * 1000
+  activeDuration: 10 * 1000,
+  resave: true,
+  saveUninitialized: true
 }));
 
 app.use(express.static(require('path').join(__dirname + '/Public')));
@@ -507,6 +510,38 @@ app.post('/shortList/delete',urlencodedParser,function(req,res){
 	            {
 	            	console.log(results.affectedRows);
 	            	res.redirect('/dashboard/userProfile/shortList');
+	            }
+			});	
+		} 
+		else{
+		console.log('Login again!!');
+			res.render('login',{
+				passwordIncorrect: ' ',
+				userNotRegistered: ' ',
+				loginAgain:'Session expired, Login Again!! '
+			});
+		}
+	}
+});
+app.post('/dashboard/userProfile/delete',urlencodedParser,function(req,res){
+	{
+		if(req.session.user&&req.session)
+		{
+
+			var userName=req.body.del;
+			connection.query("DELETE FROM users where pname = ?",[userName],function(err,results,fields){
+				if(err)
+	            {
+	            	console.log("error at query");
+					res.send({
+					"code":400,
+					"failed":"Error ocurred"
+					});
+	            }
+	            else
+	            {
+	            	console.log(results.affectedRows);
+	            	res.redirect('/');
 	            }
 			});	
 		} 
@@ -996,6 +1031,7 @@ app.get('/dashboard/UserNameError',function(req,res){
 	console.log(req.query.nam);
 	res.write("OOPS ! "+req.query.nam+"  User Name doesn't exist !!");
 });
+
 app.get('/logout', function(req, res) {
   	req.session.destroy(function(err){
   		if(err){

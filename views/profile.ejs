@@ -33,14 +33,15 @@
             background-color: #6d6e70;
             justify-content:center;
                }
-        #header img{
-            float: left;
-            width: 250px;
-            height: 100%;
-            background: #555;
-            cursor: pointer;
-            margin-left: 7%;
-            border-radius: 15px;
+         #header img{
+        float: left;
+        width: 150px;
+        height: 78%;
+        background: #555;
+        cursor: pointer;
+        margin-left: 1%;
+        margin-top:0.5%;
+        /*border-radius: 15px;*/
         } 
     	#box1{
     		position:absolute;
@@ -108,6 +109,7 @@
     		color:cyan;
     		font-size:16px;
     		letter-spacing:2px;
+            text-shadow:4px 4px black;
     	}
     	.right{
     		font-family:monospace;
@@ -120,6 +122,16 @@
         {
             font-size: 22px;
         }
+        .fa-trash
+        {
+            font-size: 22px;
+            color: red;
+        }
+        .fa-trash:hover
+        {
+            background-color: red;
+            color: white;
+        }
         #btnSubmitlike{
         	position:absolute;
         	left:0%;
@@ -129,6 +141,16 @@
         #btnSubmitlike:hover{
             background-color:white ;
             color:#3B5998;
+        }
+        #btnSubmitdel{
+            position:absolute;
+            left:0%;
+            top:0%;
+            border: none;
+        }
+        #btnSubmitdel:hover{
+            background-color:red ;
+            color:white;
         }
         #disableBtnSubmitlike{
         	
@@ -173,7 +195,7 @@
 </head>
 <body>
     <div id="header">
-        <!--<img src="/images/logo.jpg" alt="logos" onclick="location.href='/dashboard' " title="dashboard" >-->
+        <img src="/images/logo2.png" alt="logos" onclick="location.href='/dashboard' " title="dashboard" >
     </div>
 	<div id="box1">
 		    <% if (user.image) { %>
@@ -202,6 +224,12 @@
                            <% } %>
                     <% } %>
             </div>
+            <% } else { %>
+            <div id="likeBtn">
+                <form action="/dashboard/userProfile/delete" method="POST">
+                    <button name="del" id="btnSubmitdel" type="submit" value="<%= user.pname %>" title="Delete my Profile"><span><i class="fa fa-trash"></i></span></button>
+                </form>
+            </div>
             <% } %>
 	</div>
 	<table id="box2">
@@ -229,6 +257,10 @@
 			<td class="left"> Mother Tongue </td>
 			<td class="right"><%= user.motherTongue%></td>
 		</tr>
+        <tr>
+            <td class="left"> Email </td>
+            <td class="right"><%= user.email%></td>
+        </tr>
 	</table>
 	<table id="box3">
 		<tr>
@@ -241,8 +273,12 @@
 		</tr>
 		<tr>
 			<td class="left"> Qualificaiton </td>
-			<td class="right"><%= user.qualification %> , <%= user.college%></td>
+			<td class="right"><%= user.qualification %></td>
 		</tr>
+        <tr>
+            <td class="left"> College </td>
+            <td class="right"><%= user.college%></td>
+        </tr>
 		<tr>
 			<td class="left"> country </td>
 			<td class="right"><%= user.country %></td>
