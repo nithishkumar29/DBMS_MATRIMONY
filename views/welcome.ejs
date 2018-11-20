@@ -10,19 +10,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Krub:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="shortcut icon" href="./images/Capture.PNG">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style type="text/css">
     	#header{
     		   position:fixed;
 		   	   top:0%;
 		   	   width:100vw;
-		   	   height:10%;
+		   	   height:10vmin;
 		   	   background:linear-gradient(to left,#263838,#545656);
 		   	   border:1px solid white;
 		       }
         #header img{
             float: left;
-            width: 175px;
+            width: 25vmin;
             height: 78%;
             background: #555;
             cursor: pointer;
@@ -41,15 +44,15 @@
     	#dpDisplay{
              position:absolute;
              background:url("/images/profilePic.jpg");
-             width:200px;
-    		 height:200px;
+             width:26.5vmin;
+    		 height:26.5vmin;
     		 border-radius:50%;
              left:25%;
              top:10%;
     	}
     	#dpDisplay > img{
-    		width:200px;
-    		height:200px;
+    		width:26.5vmin;
+    		height:26.5vmin;
     		border-radius:50%;
             border:2px solid white/*#66ff99*/;
     	}
@@ -59,7 +62,7 @@
             padding:0px 4px;
     		text-decoration:none;
     		border: none;
-    		font-size:25px;
+    		font-size:3.5vmin;
     		font-family:monospace;
     		background-color: #545656;/*:linear-gradient(to left,#263838,#545656);*/
     		justify-content:center;
@@ -79,13 +82,13 @@
     		position:absolute;
     		left:25%;
     		top:20%;
-    		font-size:22px;
+    		font-size:3.2vmin;
     		justify-content:center;
     	}
     	#searchInput{
     		position: absolute;
     		border: none;
-    		font-size:22px;
+    		font-size:3.5vmin;
     		background-color:#6d6e70; 
     		right:12.5%;
     		top:25%;
@@ -100,18 +103,18 @@
     		position: relative;
     		background:linear-gradient(to left,#263838,#545656);/*url("/images/bck1.jpg");*/
             border:1px solid white;
-    		margin-top:4.9%;
+    		margin-top:10vh;
     		height:89.8vmin;
-    		width:60vmin;
+    		width:29.5vw;
     		z-index: 1;
             border-bottom:1px solid white;
     	}
     	#preferenceForm{
     		position: relative;
-    		margin-left:35%;
-    		margin-top:-40%;
-    		width:120vmin;
-    		height:15vmin;
+    		margin-left:35vw;
+    		margin-top:-81.5vh;
+    		width:58.5vw;
+    		height:15vh;
             background:linear-gradient(to top ,#263838,#545656);
             opacity:0.8;
     	}
@@ -119,7 +122,7 @@
     		position: absolute;
     		top:40%;
     		left:3%;
-    		font-size:18px;
+    		font-size:2.4vmin;
     	}
     	#pform > input{
     		border: none;
@@ -127,8 +130,8 @@
     	}
     	#title{
     		position:absolute;
-    		font-size:16px;
-    		color:#050505;
+    		font-size:2.2vmin;
+    		color:#66ff99;/*#050505;*/
     		font-weight:800;
     		top:16%;
     		width:100%;
@@ -152,10 +155,10 @@
     	}
     	#bckImage>img{
     		position:relative;
-    		margin-left:60vmin;
-    		margin-top:-11.4%;
+    		margin-left:29.5vw;
+    		margin-top:-23.2vmin;
     		z-index: -1;
-    		width:70.53vmax;
+    		width:70.5vw;
     		height:89.6vmin;
             border-right:1px solid white;
             border-bottom:1px solid white;
@@ -166,8 +169,8 @@
     		z-index:5;
     		margin-top:-20%;
     		margin-left:30%;
-    		height:250px;
-            width:70%;
+    		height:35vh;
+            width:70vw;
     	}
     	.slide1{
     		position: absolute;
@@ -212,26 +215,26 @@
               position:absolute;
               left:2%;
               top:50%;
-              font-size:25px;
+              font-size:3.4vmin;
               cursor:pointer;
     	}
     	.next{
     		position:absolute;
     		left:95%;
     		top:50%;
-    		font-size:25px;
+    		font-size:3.4vmin;
             cursor: pointer;
     	}
     	.mName{
     		position: absolute;
     		top:68%;
     		left:5%;
-    		font-size:20px;
+    		font-size:2.8vmin;
     		font-weight:700;
     		color:#ff6666;
     	}
     	.mGender{
-    		font-size:16px;
+    		font-size:2.4vmin;
     		font-weight:400;
     		color:#660033;
     	}
@@ -241,7 +244,7 @@
     		left:5%;
     	}
     	.rKey,.hKey{
-    		font-size:16px;
+    		font-size:2vmin;
     		font-weight:700;
     	}
     	.mEdu{
@@ -250,7 +253,7 @@
     		left:5%;
     	}
     	.mKey{
-    		font-size:16px;
+    		font-size:2vmin;
     		font-weight:700;
     	}
     	.mAbout{
@@ -261,6 +264,9 @@
     		z-index:2;
     		color:cyan;
     	}
+        .mValue,.rValue,.hValue{
+            font-size:1.8vmin;
+        }
     	#formbutton{
     		position:absolute;
     		left:60%;
@@ -277,7 +283,7 @@
     	.Custom-style{
     		background:linear-gradient(to right bottom,#263838,#a3c2c2);;
     		color:white;
-    		font-size:20px;
+    		font-size:2.5vmin;
     	}
     	
     	.icon_for_file{
@@ -288,7 +294,7 @@
     	}
     	.Custom-size{
     		color:white;
-    		font-size:25px;
+    		font-size:3vmin;
     	}
     	#ta{
     		position: absolute;
@@ -304,10 +310,10 @@
     	}
         #userName{
         	position:absolute;
-        	left:30%;
+        	left:28%;
         	top:45%;
         	color:cyan;
-        	font-size:30px;
+        	font-size:3.8vmin;
             letter-spacing:4px;
             font-family: 'Krub', sans-serif;
             text-shadow:2px 2px 8px black;
@@ -318,18 +324,18 @@
         	left:35%;
         	top:53%;
         	color:cyan;
-        	font-size:20px;
+        	font-size:2.8vmin;
             letter-spacing:4px;
         	text-shadow:2px 2px 8px black;
         }
         .logoutbtn{
-        	font-size:15px;
+        	font-size:3vmin;
         }
         p{
             font-family: 'Krub', sans-serif;
         }
         #dashboardIcons{
-            font-size: 36px;
+            font-size: 4.8vmin;
             position: absolute;
             margin-top: 100%;
             margin-left: 15%;
@@ -338,7 +344,7 @@
             float: left;
         }
         i{
-            font-size:36px;
+            font-size:4.8vmin;
             padding: 10px;
             transition: transform .3s;
         }
@@ -356,18 +362,23 @@
         }
         #yourLikesIcon{
             position:absolute;
-            left:285%;
-            top:-210%;
+            left:21vmin;
+            top:-7.8vmin;
         }
         #likedByIcon{
             position:absolute;
-            margin-left:140%;
-            margin-top:-170%;
+            left:10vmin;
+            top:-1vmin;
         }
         #shortlistIcon{
             position: absolute;
-            margin-left:400%;
-            margin-top:-350%;
+            left:30vmin;
+            top:-14vmin;
+        }
+       #profileIcon{
+            position: absolute;
+            left:1.3vmin;
+            top:0vmin;
         }
         #yourLikesIcon:hover
         {
@@ -421,7 +432,7 @@
     <p id="userName">Hi , <span><%= user.pname %></span></p>
     <p id="msg">Welcome</p>
     <div id="dashboardIcons">
-        <i class="material-icons" style="font-size:36px" title="Profile" id="profileIcon" onclick="location.href='http://localhost:8081/dashboard/userProfile?partner=<%= user.pname %>'">person</i>
+        <i class="material-icons" style="font-size:5vmin" title="Profile" id="profileIcon" onclick="location.href='http://127.0.0.1:8081/dashboard/userProfile?partner=<%= user.pname %>'">person</i>
         <form class="temp" action="/dashboard/userProfile/likedBy" method="GET">
             <button  type="submit" name="pname" value="<%= user.pname %>"><i class="material-icons" style="font-size:36px;" title="Interested in <%= user.pname %>" id="likedByIcon">face</i></button>
         </form>
