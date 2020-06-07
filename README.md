@@ -11,7 +11,7 @@ paste your MYSQL credentials in [config.js](https://github.com/nithishkumar29/DB
 Import existing database
   - `create database matrimony` 
   - `sudo mysql -u root -p matrimony < /path/to/this/repo/matrimony.sql`
-### Start Web Server
+### Start Server
 ```
 cd /path/to/app/directory
 node app.js
