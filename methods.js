@@ -6,12 +6,8 @@ var app = express();
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-var connection = mysql.createConnection ({
-	host : 'localhost',
-	database : 'matrimony',
-	user : 'root',
-	password : ''
-});
+const db = require('./config.js');
+var connection = db.connection;
 
 module.exports.insertValues = function(pname, likedBy) 
 {

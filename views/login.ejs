@@ -26,11 +26,11 @@
        }
         #header img{
         float: left;
-        width: 10vw;;
-        height: 8vh;
+        width: 8vw;;
+        height: 7.5vh;
         background: #555;
         cursor: pointer;
-        margin-left: 5%;
+        margin-left: 0.5vw;
         margin-top:0.5%;
         /*border-radius: 15px;*/
         } 
@@ -54,6 +54,7 @@
         font-family: 'Krub', sans-serif;
        }
        #Login{
+        
         position:relative;
         z-index:2;
         border-bottom: 15%; 
@@ -62,10 +63,8 @@
         width:30%;
         height:45vmin;  
         background-color: lightgrey;
-        border-radius: 10px;
-        padding: 15px 15px;
-        padding-bottom: 15px;
-        padding-top: 15px;
+        border-radius: 1vmin;
+        padding: 2vmin;
         opacity:0.8;
        }
         #Form {
@@ -147,7 +146,6 @@
         #quoteMsg1{
           position: absolute;
           left:30%;
-          right:20%;
           top:20%;
           font-size:4vmin;
           font-weight:700;
@@ -156,7 +154,6 @@
         #quoteMsg2{
           position: absolute;
           left:20%;
-          right:10%;
           top:40%;
           font-size:4vmin;
           font-weight:700;
@@ -567,6 +564,7 @@
               switchSlides(slideIndex);
             }
          $(document).ready(function(){
+
             $("#FeedbackIcon").click(function(){
             $('html,body').animate({
                 scrollTop:$("#Feedback").offset().top
