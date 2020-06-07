@@ -1,12 +1,22 @@
 # DBMS_MATRIMONY
-> Matrimonial Website using Node.js & MySql
+Matrimonial Website using Node.js & MySql
 
+### Installations
+```
+sudo apt-get install nodejs
+sudo apt-get install mysql-server
+```
 ### Setup
-> sudo apt-get install nodejs
-> sudo apt-get install mysql-server
-> paste your MYSQL credentials in dbConnection.js
-> Import database
+paste your MYSQL credentials in [config.js](https://github.com/nithishkumar29/DBMS_MATRIMONY/blob/master/config.js) <br>
+Import existing database
   - `create database matrimony` 
   - `sudo mysql -u root -p matrimony < /path/to/this/repo/matrimony.sql`
-
-> run `node app.js`
+### Start Web Server
+```
+cd /path/to/app/directory
+node app.js
+```
+### Launch App
+```
+visit http://127.0.0.1:8081/
+```
